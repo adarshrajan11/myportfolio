@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 import { CiMenuFries } from 'react-icons/ci'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 const links = [
   {
     name: 'Home',
@@ -16,8 +18,8 @@ const links = [
     path: '/resume',
   },
   {
-    name: 'Work',
-    path: '/work',
+    name: 'Works',
+    path: '/works',
   },
   {
     name: 'Contact',
@@ -26,6 +28,7 @@ const links = [
 ]
 
 const MobileNav = () => {
+  const pathname = usePathname()
   return (
     <Sheet>
       <SheetTrigger className='flex justify-center items-center'>
@@ -44,7 +47,11 @@ const MobileNav = () => {
             <Link
               key={index}
               href={link.path}
-              className='mb-4 text-xl hover: text-accent transition-all'
+              className={`${
+                link.path === pathname
+                  ? 'text-accent border-b-2 border-accent'
+                  : ''
+              } text-xl capitalize hover:text-accent transition-all`}
             >
               {link.name}
             </Link>
