@@ -202,7 +202,7 @@ const Resume = () => {
               <h3> {skills.title} </h3>
               <p> {skills.description} </p>
               <ScrollArea className='h-[400px]'>
-                <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
+                <ul className='grid grid-cols-2 sm:grid-cols-3 gap-4 xl:gap-[30px] '>
                   {skills.skillList.map((item, index) => {
                     return (
                       <li key={index}>
