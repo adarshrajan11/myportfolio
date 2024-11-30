@@ -22,6 +22,7 @@ const Photo = () => {
         >
           <Image
             src="/assets/adarsh-removebg-preview.png"
+            alt="adarsh"
             priority
             quality={100}
             fill
